@@ -4,46 +4,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colombia</title>
-    <link rel="stylesheet" href="colombia.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilo para el encabezado */
+        header {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        header h1 {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        header h1:hover {
+            box-shadow: 0 0 10px red;
+        }
+
+        .flag {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .flag.left {
+            left: 0;
+            width: 10%;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg') no-repeat center center;
+            background-size: contain;
+        }
+
+        .flag.right {
+            right: 0;
+            width: 10%;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg') no-repeat center center;
+            background-size: contain;
+        }
+
+        .flag:hover {
+            box-shadow: 0 0 10px yellow;
+        }
+
+        /* Fondo de la página */
+        body {
+            background-color: #f0f0f5;
+        }
+
+        /* Ajustes para el iframe de video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background-color: black;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Encabezado -->
     <header>
-        <img src="imagenes/bandera.png" alt="Bandera de Colombia" class="flag">
+        <div class="flag left"></div>
         <h1>Colombia</h1>
-        <img src="imagenes/bandera.png" alt="Bandera de Colombia" class="flag">
+        <div class="flag right"></div>
     </header>
 
-    <div class="content">
-        <div class="section" id="historia">
-            <h2>Historia de Colombia</h2>
-            <p>Colombia tiene una rica historia que incluye la época precolombina, la colonización española y su independencia en 1810. Ha sido un país fundamental en la región, conocido por su cultura diversa y su evolución política y social.</p>
-            <img src="imagenes/marquez.jpg" alt="Gabriel García Márquez" class="img-small">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Colombia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://es.wikipedia.org/wiki/Deporte_en_Colombia">Historia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://cinep.org.co/musica-tradicional-colombiana-patrimonio-al-ritmo-de-la-pluralidad-d66/#:~:text=La%20m%C3%BAsica%20tradicional%20colombiana%20nace,fieles%20a%20sus%20pr%C3%A1cticas%20musicales.">Música</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://es.wikipedia.org/wiki/Deporte_en_Colombia#Deportes">Deportes</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido en grilla -->
+    <div class="container my-4">
+        <div class="row">
+            <!-- Historia de Colombia -->
+            <div class="col-lg-6" id="historia">
+                <h2>Historia de Colombia</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/g2CiCEfn9dk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Música colombiana -->
+            <div class="col-lg-6" id="musica">
+                <h2>Música Colombiana</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/ZbCweCWuL2I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
 
-        <div class="section" id="economia">
-            <h2>Economía de Colombia</h2>
-            <p>La economía de Colombia es una de las más grandes de América Latina, basada en exportaciones como el petróleo, el café, las flores y otros productos agrícolas. El país ha experimentado un crecimiento constante en las últimas décadas.</p>
-            <img src="imagenes/seleccion.jpg" alt="Selección Colombia" class="img-small">
+        <!-- Carousel de videos -->
+        <div class="row my-4" id="videos">
+            <h2 class="text-center">Galería de Videos</h2>
+            <div class="col-12">
+                <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/yAMc2XdyAq0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/Bf70R0GqOrk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/ywr7Z7pcz6w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <div class="section" id="fauna">
-            <h2>Fauna de Colombia</h2>
-            <p>Colombia es uno de los países más biodiversos del mundo, hogar de una gran variedad de animales, incluyendo el oso de anteojos, aves tropicales y muchas especies en peligro de extinción.</p>
-            <img src="imagenes/oso.jpg" alt="Oso de anteojos" class="img-small">
+        <!-- Accordion y Cards -->
+        <div class="row my-4">
+            <div class="col-lg-6">
+                <h3>Información adicional</h3>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Cultura Colombiana
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Colombia tiene una rica cultura influenciada por sus diversas regiones.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Gastronomía Colombiana
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Platos típicos como la bandeja paisa, el sancocho y las arepas son famosos en Colombia.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <h3>Explora Colombia</h3>
+                <div class="card" style="width: 100%;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Ritacuba_.jpg/800px-Ritacuba_.jpg" class="card-img-top" alt="Parque Nacional">
+                    <div class="card-body">
+                        <h5 class="card-title">Parque Nacional Natural Cocuy</h5>
+                        <p class="card-text">Una de las maravillas naturales de Colombia.</p>
+                        <a href="https://es.wikipedia.org/wiki/Parque_nacional_natural_El_Cocuy" class="btn btn-primary" target="_blank">Ver más</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <footer>
-        <h3>Últimos 5 presidentes de Colombia</h3>
-        <ul>
-            <li><a href="https://es.wikipedia.org/wiki/Gustavo_Petro" target="_blank">Gustavo Francisco Petro Urrego (2022-2026)</a></li>
-            <li><a href="https://es.wikipedia.org/wiki/Iv%C3%A1n_Duque" target="_blank">Iván Duque (2018-2022)</a></li>
-            <li><a href="https://es.wikipedia.org/wiki/Juan_Manuel_Santos" target="_blank">Juan Manuel Santos (2010-2018)</a></li>
-            <li><a href="https://es.wikipedia.org/wiki/%C3%81lvaro_Uribe" target="_blank">Álvaro Uribe (2002-2010)</a></li>
-            <li><a href="https://es.wikipedia.org/wiki/Andr%C3%A9s_Pastrana" target="_blank">Andrés Pastrana (1998-2002)</a></li>
-            <li><a href="https://es.wikipedia.org/wiki/Ernesto_Samper" target="_blank">Ernesto Samper (1994-1998)</a></li>
-        </ul>
-    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
